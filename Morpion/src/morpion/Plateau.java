@@ -15,7 +15,7 @@ public class Plateau {
     CaseJeu plateau[][] = new CaseJeu[3][3];
     //constructeurs
     Plateau(){
-        for(int x=0;x>3;x++){
+        for(int x=0;x<3;x++){
             for(int y=0;y<3;y++){
                 plateau[x][y] = new CaseJeu(x,y);
             }

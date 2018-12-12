@@ -16,7 +16,7 @@ import java.lang.Math;
  */
 public class Controleur {
     //attributs
-    Plateau p;
+    Plateau p = new Plateau();
     //constucteurs
     //méthodes
 
@@ -57,11 +57,12 @@ public class Controleur {
     }
     public boolean verifVictoireX(){
         boolean vic=false;
-        for(int i=0;i>3;i++){
+        for(int i=0;i<3;i++){
             if(p.plateau[i][0].getEtat()==EtatCase.CROIX && 
             p.plateau[i][1].getEtat()==EtatCase.CROIX && 
             p.plateau[i][2].getEtat()==EtatCase.CROIX){
                 vic=true;
+                System.out.println("test");
             }
             if(p.plateau[0][i].getEtat()==EtatCase.CROIX && 
             p.plateau[1][i].getEtat()==EtatCase.CROIX && 
@@ -81,7 +82,7 @@ public class Controleur {
     }
     public boolean verifVictoireO(){
         boolean vic=false;
-        for(int i=0;i>3;i++){
+        for(int i=0;i<3;i++){
             if(p.plateau[i][0].getEtat()==EtatCase.ROND && 
             p.plateau[i][1].getEtat()==EtatCase.ROND && 
             p.plateau[i][2].getEtat()==EtatCase.ROND){
