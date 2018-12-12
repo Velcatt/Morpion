@@ -16,6 +16,7 @@ import java.lang.Math;
  */
 public class Controleur {
     //attributs
+    Plateau p;
     //constucteurs
     //méthodes
 
@@ -53,5 +54,53 @@ public class Controleur {
         }
         Collections.shuffle(ListeAffrontement);
         return ListeAffrontement;
+    }
+    public boolean verifVictoireX(){
+        boolean vic=false;
+        for(int i=0;i>3;i++){
+            if(p.plateau[i][0].getEtat()==EtatCase.CROIX && 
+            p.plateau[i][1].getEtat()==EtatCase.CROIX && 
+            p.plateau[i][2].getEtat()==EtatCase.CROIX){
+                vic=true;
+            }
+            if(p.plateau[0][i].getEtat()==EtatCase.CROIX && 
+            p.plateau[1][i].getEtat()==EtatCase.CROIX && 
+            p.plateau[2][i].getEtat()==EtatCase.CROIX){
+                vic=true;
+            }
+        }
+        if((p.plateau[0][0].getEtat()==EtatCase.CROIX &&
+        p.plateau[1][1].getEtat()==EtatCase.CROIX &&
+        p.plateau[2][2].getEtat()==EtatCase.CROIX)||
+        (p.plateau[0][2].getEtat()==EtatCase.CROIX &&
+        p.plateau[1][1].getEtat()==EtatCase.CROIX &&
+        p.plateau[2][0].getEtat()==EtatCase.CROIX)){
+            vic=true;
+        }
+        return vic;
+    }
+    public boolean verifVictoire0(){
+        boolean vic=false;
+        for(int i=0;i>3;i++){
+            if(p.plateau[i][0].getEtat()==EtatCase.ROND && 
+            p.plateau[i][1].getEtat()==EtatCase.ROND && 
+            p.plateau[i][2].getEtat()==EtatCase.ROND){
+                vic=true;
+            }
+            if(p.plateau[0][i].getEtat()==EtatCase.ROND && 
+            p.plateau[1][i].getEtat()==EtatCase.ROND && 
+            p.plateau[2][i].getEtat()==EtatCase.ROND){
+                vic=true;
+            }
+        }
+        if((p.plateau[0][0].getEtat()==EtatCase.ROND &&
+        p.plateau[1][1].getEtat()==EtatCase.ROND &&
+        p.plateau[2][2].getEtat()==EtatCase.ROND)||
+        (p.plateau[0][2].getEtat()==EtatCase.ROND &&
+        p.plateau[1][1].getEtat()==EtatCase.ROND &&
+        p.plateau[2][0].getEtat()==EtatCase.ROND)){
+            vic=true;
+        }
+        return vic;
     }
 }
