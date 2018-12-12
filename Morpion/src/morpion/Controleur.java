@@ -79,7 +79,7 @@ public class Controleur {
         }
         return vic;
     }
-    public boolean verifVictoire0(){
+    public boolean verifVictoireO(){
         boolean vic=false;
         for(int i=0;i>3;i++){
             if(p.plateau[i][0].getEtat()==EtatCase.ROND && 
@@ -102,5 +102,11 @@ public class Controleur {
             vic=true;
         }
         return vic;
+    }
+    public void cocherCaseX(CaseJeu c){
+        c.setEtat(EtatCase.CROIX);
+    }
+    public void cocherCaseO(CaseJeu c){
+        c.setEtat(EtatCase.ROND);
     }
 }
