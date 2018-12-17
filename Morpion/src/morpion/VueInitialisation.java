@@ -78,7 +78,7 @@ public class VueInitialisation extends Observable {
         btnValider = new JButton("Valider");
         btnValider.addActionListener((ActionEvent e) -> {
             setChanged();
-            notifyObservers(new Message());
+            notifyObservers(new MessageInit(Actions.VALIDER,Integer.valueOf(cbox.getSelectedItem().toString())));
             clearChanged();
         });
         panelbas.add(btnValider);
@@ -88,7 +88,7 @@ public class VueInitialisation extends Observable {
         btnAnnuler = new JButton("Annuler");
         btnAnnuler.addActionListener((ActionEvent e) -> {
             setChanged();
-            notifyObservers(new Message());
+            notifyObservers(new MessageInit(Actions.ANNULER,0));
             clearChanged();
         });
         panelbas.add(btnAnnuler);
