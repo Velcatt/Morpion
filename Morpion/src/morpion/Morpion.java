@@ -32,9 +32,11 @@ public class Morpion {
         System.out.println(controleur.verifVictoireX());
         System.out.println(controleur.verifVictoireO());
         
-        VueInitialisation test;
-        test = new VueInitialisation();
+        VueJeu test;
+        test = new VueJeu();
         test.afficher();
         
     }   
+    
+    
 }

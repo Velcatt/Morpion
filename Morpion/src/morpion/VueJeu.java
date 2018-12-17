@@ -33,8 +33,15 @@ public class VueJeu extends Observable {
     private JLabel nombrejoueurs;
     private JLabel v1;
     private JComboBox cbox;
-    private final JButton btnValider ;
-    private final JButton btnAnnuler ;
+    private final JButton case11;
+    private final JButton case12;
+    private final JButton case13;
+    private final JButton case21;
+    private final JButton case22;
+    private final JButton case23;
+    private final JButton case31;
+    private final JButton case32;
+    private final JButton case33;
     
     /**
      *
@@ -47,7 +54,7 @@ public class VueJeu extends Observable {
         window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
         
         
-        window.setSize(500, 120);
+        window.setSize(500, 500);
         Dimension dim;
         dim = Toolkit.getDefaultToolkit().getScreenSize();
         window.setLocation(dim.width/2-window.getSize().width/2, dim.height/2-window.getSize().height/2);
@@ -55,7 +62,8 @@ public class VueJeu extends Observable {
         JPanel panel = new JPanel(new BorderLayout());
         window.add(panel) ;
         
-        JPanel panelhaut = new JPanel(new BorderLayout());
+        JPanel panelhaut;
+        panelhaut = new JPanel(new GridLayout(1,2));
         panel.add(panelhaut, BorderLayout.NORTH) ;
         
         JPanel panelcentre = new JPanel(new GridLayout(3, 3));
@@ -67,30 +75,33 @@ public class VueJeu extends Observable {
         JLabel label = new JLabel("Tournoi de Morpion");
         panelhaut.add(label);
         
+        JLabel label1 = new JLabel(" ");
+        panelhaut.add(label1);
         
         
         
+        case11 = new JButton(" ");
+        case12 = new JButton(" ");
+        case13 = new JButton(" ");
+        case21 = new JButton(" ");
+        case22 = new JButton(" ");
+        case23 = new JButton(" ");
+        case31 = new JButton(" ");
+        case32 = new JButton(" ");
+        case33 = new JButton(" ");
         
-        
-        btnValider = new JButton("Lancer une partie");
-        btnValider.addActionListener((ActionEvent e) -> {
-            setChanged();
-            notifyObservers(new MessageJeu());
-            clearChanged();
-        });
-        panelbas.add(btnValider);
-
-        panelbas.add(new JLabel(""));
-
-        btnAnnuler = new JButton("Annuler");
-        btnAnnuler.addActionListener((ActionEvent e) -> {
-            setChanged();
-            notifyObservers(new MessageJeu());
-            clearChanged();
-        });
-        panelbas.add(btnAnnuler);
-        
-        
+        panelcentre.add(case11);
+        panelcentre.add(case12);
+        panelcentre.add(case13);
+        panelcentre.add(case21);
+        panelcentre.add(case22);
+        panelcentre.add(case23);
+        panelcentre.add(case31);
+        panelcentre.add(case32);
+        panelcentre.add(case33);              
     }
     
+    public void afficher(){
+        this.window.setVisible(true);
+    }
 }
