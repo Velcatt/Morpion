@@ -36,7 +36,5 @@ public class Morpion {
         test = new VueInitialisation();
         test.afficher();
         
-    }
-    
-    
+    }   
 }
