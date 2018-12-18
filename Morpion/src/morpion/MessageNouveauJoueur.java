@@ -13,12 +13,12 @@ public class MessageNouveauJoueur {
     //attributs
     private final Actions action;
     private final String pseudo;
-    private final boolean enfant;
+    private final NiveauJoueur niveau;
     //constructeurs
-    MessageNouveauJoueur(Actions a,String p,boolean e){
+    MessageNouveauJoueur(Actions a,String p,NiveauJoueur n){
         this.action=a;
         this.pseudo=p;
-        this.enfant=e;
+        this.niveau=n;
     }
     //méthodes
 
@@ -32,8 +32,8 @@ public class MessageNouveauJoueur {
     /**
      * @return the enfant
      */
-    public boolean getEnfant() {
-        return enfant;
+    public NiveauJoueur getNiveau() {
+        return niveau;
     }
 
     /**

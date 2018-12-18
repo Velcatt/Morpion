@@ -102,4 +102,7 @@ public class VueInitialisation extends Observable {
     public void afficher(){
         this.window.setVisible(true);
     }
+    public void close(){
+        this.window.setVisible(false);
+    }
 }

@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/CaseJeu.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/NiveauJoueur.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/VueNouveauJoueur.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/EtatCase.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/MessageNouveauJoueur.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/VueInitialisation.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Controleur.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Plateau.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Joueur.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Affrontement.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/VueJeu.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Actions.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/MessageInit.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/VueAccueil.java</file>
+            <file>file:/users/info/etu-s2/lacranto/Morpion/Morpion/src/morpion/Morpion.java</file>
+        </group>
     </open-files>
 </project-private>

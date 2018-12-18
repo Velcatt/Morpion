@@ -19,7 +19,7 @@ import javax.swing.JTable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
-
+import java.util.ArrayList;
 /**
  *
  * @author rousstan
@@ -33,15 +33,7 @@ public class VueJeu extends Observable {
     private JLabel nombrejoueurs;
     private JLabel v1;
     private JComboBox cbox;
-    private final JButton case11;
-    private final JButton case12;
-    private final JButton case13;
-    private final JButton case21;
-    private final JButton case22;
-    private final JButton case23;
-    private final JButton case31;
-    private final JButton case32;
-    private final JButton case33;
+    private final JButton boutons[][]= new JButton[3][3];
     
     /**
      *
@@ -78,27 +70,16 @@ public class VueJeu extends Observable {
         JLabel label1 = new JLabel(" ");
         panelhaut.add(label1);
         
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                boutons[i][j]=new JButton();
+                panelcentre.add(boutons[i][j]);
+            }
+        }
         
         
-        case11 = new JButton(" ");
-        case12 = new JButton(" ");
-        case13 = new JButton(" ");
-        case21 = new JButton(" ");
-        case22 = new JButton(" ");
-        case23 = new JButton(" ");
-        case31 = new JButton(" ");
-        case32 = new JButton(" ");
-        case33 = new JButton(" ");
         
-        panelcentre.add(case11);
-        panelcentre.add(case12);
-        panelcentre.add(case13);
-        panelcentre.add(case21);
-        panelcentre.add(case22);
-        panelcentre.add(case23);
-        panelcentre.add(case31);
-        panelcentre.add(case32);
-        panelcentre.add(case33);              
+                    
     }
     
     public void afficher(){

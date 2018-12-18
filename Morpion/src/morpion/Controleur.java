@@ -9,31 +9,56 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Observer;
+import java.util.Observable;
 
 /**
  *
  * @author rousstan
  */
-public class Controleur {
+public class Controleur implements Observer{
     //attributs
     Plateau p = new Plateau();
+    ArrayList<Joueur> ListeJoueur = new ArrayList();
+    private VueInitialisation VI;
     //constucteurs
+    Controleur(){
+        VueInitialisation VI = new VueInitialisation();
+        VI.addObserver(this);
+        VI.afficher();
+    }
     //méthodes
 
-    public ArrayList<Joueur> initJoueurs(int nbjoueurs){
-        String nomj,nivj;
-        ArrayList<Joueur> ListeJoueur = new ArrayList();
-        Scanner sc = new Scanner(System.in);
-        for(int i=1;i<=nbjoueurs;i++){
-            System.out.println("Nom du joueur "+i+" : ");
-            nomj=sc.nextLine();
-            System.out.println("Ce joueur est-il un enfant ? (o/n)");
-            nivj=sc.nextLine();
-            if(nivj.equals("o")){
-                ListeJoueur.add(new Joueur(nomj,NiveauJoueur.ENFANT));
-            }else{
-                ListeJoueur.add(new Joueur(nomj,NiveauJoueur.ADULTE));
+    @Override
+    public void update(Observable arg0,Object arg1){
+        if (arg1 instanceof MessageInit) {
+            MessageInit mi = (MessageInit) arg1;
+            if(mi.getAction()==Actions.ANNULER){
+                System.out.println("Vous venez d'annuler.");
+            }else if(mi.getAction()==Actions.VALIDER){
+                initJoueurs(mi.getNbjoueurs());
+                initListeAffrontement(mi.getNbjoueurs());
+                System.out.println("Vous avez bien initialisé "+mi.getNbjoueurs()+" joueurs.");
             }
+              
+        }
+        if (arg1 instanceof MessageNouveauJoueur){
+            MessageNouveauJoueur mnj = (MessageNouveauJoueur) arg1;
+            if(mnj.getAction()==Actions.ANNULER){
+                System.out.println("Vous venez d'annuler.");
+            }else if(mnj.getAction()==Actions.VALIDER){
+                ListeJoueur.add(new Joueur(mnj.getPseudo(),mnj.getNiveau()));
+            }
+        }
+        if (arg1 instanceof MessageJeu){
+            
+        }
+    }
+    
+    
+    public ArrayList<Joueur> initJoueurs(int nbjoueurs){
+        for(int i=1;i<=nbjoueurs;i++){
+            VueNouveauJoueur VNJ = new VueNouveauJoueur();  
         }
         return ListeJoueur;
     }
@@ -104,10 +129,10 @@ public class Controleur {
         }
         return vic;
     }
-    public void cocherCaseX(CaseJeu c){
-        c.setEtat(EtatCase.CROIX);
+    public void cocherCaseX(int x,int y){
+        p.plateau[x][y].setEtat(EtatCase.CROIX);
     }
-    public void cocherCaseO(CaseJeu c){
-        c.setEtat(EtatCase.ROND);
+    public void cocherCaseO(int x,int y){
+        p.plateau[x][y].setEtat(EtatCase.ROND);
     }
 }

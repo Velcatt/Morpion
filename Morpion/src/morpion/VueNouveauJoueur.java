@@ -85,9 +85,9 @@ public class VueNouveauJoueur extends Observable {
         btnValider.addActionListener((ActionEvent e) -> {
             setChanged();
             if(cbox.getSelectedItem().toString().equals("- de 12 ans")){
-                notifyObservers(new MessageNouveauJoueur(Actions.VALIDER,text.getText(),true));
+                notifyObservers(new MessageNouveauJoueur(Actions.VALIDER,text.getText(),NiveauJoueur.ENFANT));
             }else{
-                notifyObservers(new MessageNouveauJoueur(Actions.VALIDER,text.getText(),false));
+                notifyObservers(new MessageNouveauJoueur(Actions.VALIDER,text.getText(),NiveauJoueur.ADULTE));
             }
             clearChanged();
         });
@@ -98,7 +98,7 @@ public class VueNouveauJoueur extends Observable {
         btnAnnuler = new JButton("Annuler");
         btnAnnuler.addActionListener((ActionEvent e) -> {
             setChanged();
-            notifyObservers(new MessageNouveauJoueur(Actions.ANNULER,"",false));
+            notifyObservers(new MessageNouveauJoueur(Actions.ANNULER,"",NiveauJoueur.ADULTE));
             clearChanged();
         });
         panelbas.add(btnAnnuler);
