@@ -82,7 +82,7 @@ public class VueAccueil extends Observable  {
         btnValider = new JButton("Lancer une partie");
         btnValider.addActionListener((ActionEvent e) -> {
             setChanged();
-            notifyObservers(new MessageJeu());
+            notifyObservers(new Message());
             clearChanged();
         });
         panelbas.add(btnValider);

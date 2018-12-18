@@ -20,6 +20,7 @@ public class Controleur implements Observer{
     //attributs
     Plateau p = new Plateau();
     ArrayList<Joueur> ListeJoueur = new ArrayList();
+    Joueur JoueurManche[] = new Joueur[2];
     private VueInitialisation VI;
     //constucteurs
     Controleur(){
@@ -36,11 +37,11 @@ public class Controleur implements Observer{
             if(mi.getAction()==Actions.ANNULER){
                 System.out.println("Vous venez d'annuler.");
             }else if(mi.getAction()==Actions.VALIDER){
-                initJoueurs(mi.getNbjoueurs());
+                VueNouveauJoueur VNJ = new VueNouveauJoueur();
+                VNJ.afficher();
                 initListeAffrontement(mi.getNbjoueurs());
                 System.out.println("Vous avez bien initialisé "+mi.getNbjoueurs()+" joueurs.");
-            }
-              
+            }      
         }
         if (arg1 instanceof MessageNouveauJoueur){
             MessageNouveauJoueur mnj = (MessageNouveauJoueur) arg1;
@@ -51,18 +52,19 @@ public class Controleur implements Observer{
             }
         }
         if (arg1 instanceof MessageJeu){
-            
+            MessageJeu mj = (MessageJeu) arg1;
+            if(mj.getAction()==Actions.ANNULER){
+                System.out.println("Vous venez d'annuler.");
+            }else if(mj.getAction()==Actions.COCHERCASE){
+                //if(JoueurCourant==JoueurManche[0]){
+                //    this.cocherCaseX(mj.getX(), mj.getY());
+                //}else if(JoueurCourant==JoueurManche[1]){
+                //    this.cocherCaseO(mj.getX(), mj.getY());
+               //}
+            }
         }
     }
-    
-    
-    public ArrayList<Joueur> initJoueurs(int nbjoueurs){
-        for(int i=1;i<=nbjoueurs;i++){
-            VueNouveauJoueur VNJ = new VueNouveauJoueur();  
-        }
-        return ListeJoueur;
-    }
-    
+  
     
     public ArrayList<Affrontement> initListeAffrontement(int nbjoueurs){
         int nba=1;

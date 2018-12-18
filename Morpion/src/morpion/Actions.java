@@ -11,5 +11,6 @@ package morpion;
  */
 public enum Actions {
     VALIDER,
-    ANNULER
+    ANNULER,
+    COCHERCASE
 }

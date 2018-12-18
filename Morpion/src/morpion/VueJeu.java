@@ -81,6 +81,12 @@ public class VueJeu extends Observable {
         
                     
     }
+    public void cocherX(int x, int y){
+        this.boutons[x][y].setText("X");
+    }
+    public void cocherO(int x, int y){
+        this.boutons[x][y].setText("O");
+    }
     
     public void afficher(){
         this.window.setVisible(true);
